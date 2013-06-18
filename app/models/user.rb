@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
+  def address
+    [city, state, country].compact.join(', ')
+  end
+
   def self.search(search)
     if search
       self.where('name ILIKE ?', "%#{search}%")
@@ -23,7 +27,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  def address
-    [city, state, country].compact.join(', ')
-  end
 end
