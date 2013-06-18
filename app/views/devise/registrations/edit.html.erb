@@ -19,6 +19,27 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
+  <div><%= f.label :username %><br />
+  <%= f.text_field :username %></div>
+
+  <div><%= f.label :name %><br />
+  <%= f.text_field :name %></div>
+
+  <div><%= f.label :birthday %><br />
+  <%= f.date_select :birthday, :start_year => 1908, :order => [:month, :day, :year] %></div>
+
+  <div><%= f.label :website %><br />
+  <%= f.text_field :website %></div>
+
+  <div><%= f.label :city %><br />
+  <%= f.text_field :city %></div>
+
+  <div><%= f.label :state %><br />
+  <%= f.text_field :state %></div>
+
+  <div><%= f.label :country %><br />
+  <%= f.text_field :country %></div>
+
   <div><%= f.submit "Update" %></div>
 <% end %>
 
