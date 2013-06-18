@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     if search
-      self.where('name LIKE ?', "%#{search}%")
+      self.where('name ILIKE ?', "%#{search}%")
     else
       find(:all)
     end
