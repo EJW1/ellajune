@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username, :city, :state, :country, :website, :birthday
+  validates_presence_of :name, :username
+  validates_uniqueness_of :username, :case_sensitive => false
 
   def self.search(search)
     if search
