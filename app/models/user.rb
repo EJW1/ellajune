@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :username
   validates_uniqueness_of :username, :case_sensitive => false
 
+  extend FriendlyId
+  friendly_id :username, use: [:slugged, :history]
+
   def self.search(search)
     if search
       self.where('name ILIKE ?', "%#{search}%")
