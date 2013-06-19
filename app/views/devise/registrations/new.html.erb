@@ -18,6 +18,11 @@
   <div><%= f.label :name %><br />
   <%= f.text_field :name %></div>
 
+  <div class="field">
+  <%= f.label :interest_tag_list, "Your Interests (separated by commas)" %><br />
+  <%= f.text_field :interest_tag_list %>
+  </div>
+
   <div><%= f.label :birthday %><br />
   <%= f.date_select :birthday, :start_year => 1908, :order => [:month, :day, :year] %></div>
 
