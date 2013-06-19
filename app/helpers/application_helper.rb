@@ -19,7 +19,7 @@ module ApplicationHelper
         max = t.count.to_i
       end 
     end
-    interest_tags.each do |post_tag|
+    interest_tags.each do |interest_tag|
       index = interest_tag.count.to_f / max * (classes.size - 1)
       yield(interest_tag, classes[index.round])
     end
