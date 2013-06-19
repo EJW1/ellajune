@@ -15,6 +15,7 @@
     <th>Title</th>
     <th>Content</th>
     <th>Link</th>
+    <th>Tags</th>
     <th>Upvotes</th>
     <th></th>
     <th></th>
@@ -26,6 +27,7 @@
     <td><%= post.title %></td>
     <td><%= post.content %></td>
     <td><%= post.link %></td>
+    <td>Tags: <%= post.posts_tag_list.map { |t| link_to t, posts_tag_path(t) }.join(', ') %></td>
     <td><%= post.votes.count %></td>
     <td><%= link_to '+1', votes_path(:vote => {:post_id => post.id}), :method => :post %></td>
     <td><%= link_to 'Read More & Comment', post %></td>
