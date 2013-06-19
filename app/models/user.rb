@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :votes
   has_many :comments
+  has_many :interest_taggings
+  has_many :interest_tags, through: :interest_taggings
 
   extend FriendlyId
   friendly_id :username, use: [:slugged, :history]
@@ -27,6 +29,26 @@ class User < ActiveRecord::Base
       self.where('name ILIKE ?', "%#{search}%")
     else
       find(:all)
+    end
+  end
+
+  #Tagging Logic
+  def self.tagged_with(name)
+    InterestTag.find_by_name!(name).users
+  end
+
+  def self.tag_counts
+    InterestTag.select("interest_tags.id, interest_tags.name, count(interest_taggings.interest_tag_id) as count").
+      joins(:interest_taggings).group("interest_taggings.interest_tag_id, interest_tags.id, interest_tags.name")
+  end
+  
+  def interest_tag_list
+    interest_tags.map(&:name).join(", ")
+  end
+  
+  def interest_tag_list=(names)
+    self.interest_tags = names.split(",").map do |n|
+      InterestTag.where(name: n.strip.downcase).first_or_create!
     end
   end
 

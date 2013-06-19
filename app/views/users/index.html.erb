@@ -25,7 +25,7 @@
   <tr>
     <td><%= user.name %></td>
     <td><%= user.email %></td>
-    <td><%= raw user.interest_tag_list.map { |t| link_to t, interest_tag_path(t) }.join(', ') %></td>
+    <td><%= raw user.interest_tags.map(&:name).map { |t| link_to t, interest_tag_path(t) }.join(', ') %></td>
     <td><%= user.birthday %></td>
     <td><%= user.website %></td>
     <td><%= user.city %></td>
