@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :username
   validates_uniqueness_of :username, :case_sensitive => false
   has_many :posts
+  has_many :votes
 
   extend FriendlyId
   friendly_id :username, use: [:slugged, :history]
