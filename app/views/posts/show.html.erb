@@ -16,9 +16,20 @@
 </p>
 
 <p>
-  <b>Points:</b>
-  <%= @post.points %>
+  <b>Votes:</b>
+  <%= @post.votes.count %>
 </p>
+
+<%= render 'comments/form' %>
+
+<h4>Comments:<h4>
+<div>
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.message %></p>
+    <p><%= comment.user.name %></p>
+    <p><%= comment.created_at %></p>
+  <% end %>
+</div>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+
   def create
     if current_user
       @vote = current_user.votes.create(params[:vote])

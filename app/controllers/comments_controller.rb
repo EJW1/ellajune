@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+before_filter :authenticate_user!
+
   # GET /comments
   # GET /comments.json
   def index
@@ -35,22 +37,18 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     @comment = Comment.find(params[:id])
+    if @comment.user.id == current_user
+      current_user = @comment.user
+    else
+      redirect_to :back, alert: "You can only edit comments that you created."
+    end
   end
 
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
-
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment, status: :created, location: @comment }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
+    @comment = current_user.comments.create(params[:comment])
+    redirect_to :back
   end
 
   # PUT /comments/1
@@ -73,11 +71,11 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-
-    respond_to do |format|
-      format.html { redirect_to comments_url }
-      format.json { head :no_content }
+    if @comment.user.id == current_user
+      @comment.destroy
+      redirect_to root_path
+    else
+      redirect_to :back, alert: "You can only delete comments that you created."
     end
   end
 end
