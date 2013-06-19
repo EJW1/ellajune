@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <b>Tags:</b>
+  <%= raw @post.post_tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(', ') %>
+</p>
+
+<p>
   <b>Votes:</b>
   <%= @post.votes.count %>
 </p>
