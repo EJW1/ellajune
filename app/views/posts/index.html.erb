@@ -38,7 +38,7 @@
 </table>
 
 <div id="post_tag_cloud">
-  <% post_tag_cloud Post.post_tag_counts, %w{s m l} do |post_tag, css_class| %>
+  <% post_tag_cloud Post.tag_counts, %w{s m l} do |post_tag, css_class| %>
     <%= link_to post_tag.name, post_tag_path(post_tag.name), class: css_class %>
   <% end %>
 </div>
