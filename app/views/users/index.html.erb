@@ -38,6 +38,8 @@
 
 <div id="interest_tag_cloud">
   <% interest_tag_cloud User.tag_counts, %w{s m l} do |interest_tag, css_class| %>
-    <%= link_to interest_tag.name, interest)tag_path(interest_tag.name), class: css_class %>
+    <%= link_to interest_tag.name, interest_tag_path(interest_tag.name), class: css_class %>
   <% end %>
 </div>
+
+<br />
