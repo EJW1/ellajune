@@ -6,8 +6,8 @@ class PostsController < ApplicationController
     Post.update_points
     if params[:search]
       @posts = Post.search(params[:search])
-    #elsif params[:post_tag]
-      #@posts = Post.tagged_with(params[:post_tag]).order('points DESC')
+    elsif params[:post_tag]
+      @posts = Post.tagged_with(params[:post_tag]).order('points DESC')
     else
       @posts = Post.order('points DESC')
     end
