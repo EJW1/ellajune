@@ -3,11 +3,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
+    #Post.update_points
+    if params[:search]
+      @posts = Post.search(params[:search])
+    #elsif params[:post_tag]
+      #@posts = Post.tagged_with(params[:post_tag]).order('points DESC')
+    else
+      @posts = Post.order('points DESC')
     end
   end
 

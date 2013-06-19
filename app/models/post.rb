@@ -5,4 +5,9 @@ class Post < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
+
+  #Search
+  def self.search(search)
+      find(:all, :conditions => ['title LIKE ? OR link LIKE ?', "%#{search}%", "%#{search}%"])
+  end
 end
