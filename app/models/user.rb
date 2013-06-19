@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username, :city, :state, :country, :website, :birthday, :address, :latitude, :longitude
   validates_presence_of :name, :username
   validates_uniqueness_of :username, :case_sensitive => false
+  has_many :posts
 
   extend FriendlyId
   friendly_id :username, use: [:slugged, :history]
