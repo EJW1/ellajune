@@ -9,6 +9,7 @@ Ellajune::Application.routes.draw do
   resources :comments
 
   match 'votes/create' => 'votes#create', :as => :votes
+  get 'post_tags/:post_tag', to: 'posts#index', as: :post_tag
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
