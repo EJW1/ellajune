@@ -10,7 +10,7 @@ Ellajune::Application.routes.draw do
 
   match 'votes/create' => 'votes#create', :as => :votes
   get 'post_tags/:post_tag', to: 'posts#index', as: :post_tag
-  get 'interest_tags/:interest_tag', to: 'interests#index', as: :interest_tag
+  get 'interest_tags/:interest_tag', to: 'users#index', as: :interest_tag
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
