@@ -85,7 +85,7 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to root_path
     else
-      redirect_to :back, alert: "You can only delete links that you created."
+      redirect_to :back, alert: "You can only delete posts that you created."
     end
   end
 end
