@@ -1,11 +1,13 @@
 Ellajune::Application.routes.draw do
+  root :to => "posts#index"
 
   devise_for :users
 
   resources :users
   resources :posts
 
-  root :to => "posts#index"
+  match 'votes/create' => 'votes#create', :as => :votes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

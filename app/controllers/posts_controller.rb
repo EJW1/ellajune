@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    #Post.update_points
+    Post.update_points
     if params[:search]
       @posts = Post.search(params[:search])
     #elsif params[:post_tag]
