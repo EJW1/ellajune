@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
+  autocomplete :interest_tag, :name, :class_name => 'interest_tag'
   
   def show
     @user = User.find(params[:id])

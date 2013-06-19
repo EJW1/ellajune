@@ -4,8 +4,16 @@ Ellajune::Application.routes.draw do
 
   devise_for :users
 
-  resources :users
-  resources :posts
+  resources :users do
+    collection do
+      get :autocomplete_interest_tag_name
+    end
+  end
+  resources :posts do
+    collection do
+      get :autocomplete_post_tag_name
+    end
+  end
   resources :comments
 
   match 'votes/create' => 'votes#create', :as => :votes
