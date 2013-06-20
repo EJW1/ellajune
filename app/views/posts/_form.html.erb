@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :post_tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :post_tag_list %>
+    <%= f.autocomplete_field :post_tag_list, autocomplete_post_tag_name_post_path, :"data-delimiter" => ', ' %>
   </div>
   <div class="actions">
     <%= f.submit %>

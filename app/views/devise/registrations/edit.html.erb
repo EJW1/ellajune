@@ -27,7 +27,7 @@
 
   <div class="field">
   <%= f.label :interest_tag_list, "Your Interests (separated by commas)" %><br />
-  <%= f.text_field :interest_tag_list %>
+  <%= f.autocomplete_field :interest_tag_list, autocomplete_interest_tag_name_interest_path, :"data-delimiter" => ', ' %>
   </div>
 
   <div><%= f.label :birthday %><br />
