@@ -1,10 +1,10 @@
 Ellajune::Application.routes.draw do
 
-  get "static_pages/community_guidelines"
+  match 'community_guidelines' => 'static_pages#community_guidelines'
 
-  get "static_pages/welcome"
+  match 'welcome' => 'static_pages#welcome'
 
-  get "static_pages/get_involved"
+  match 'get_involved' => 'static_pages#get_involved'
 
   root :to => "posts#index"
 
