@@ -29,11 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def self.search(search)
-    if search
-      self.where('name ILIKE ?', "%#{search}%")
-    else
-      find(:all)
-    end
+    self.where('name ILIKE ?', "%#{search}%")
   end
 
   #Tagging Logic
