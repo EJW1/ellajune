@@ -11,6 +11,8 @@ class UsersController < ApplicationController
       @users = User.search(params[:search])
     elsif params[:interest_tag]
       @users = User.tagged_with(params[:interest_tag])
+    elsif params[:citysearch]
+      @users = User.citysearch(params[:citysearch])    
     else
       @users = User.all
     end

@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
     [city, state, country].compact.join(', ')
   end
 
+  def self.citysearch(citysearch)
+    User.near(citysearch, 25)
+  end
+
   def self.search(search)
     if search
       self.where('name ILIKE ?', "%#{search}%")

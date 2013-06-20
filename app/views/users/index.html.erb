@@ -5,6 +5,8 @@
   <p>
     <%= label_tag(:search, "Search for Members By Name:") %>
     <%= text_field_tag :search, params[:search] %>
+    <%= label_tag(:citysearch, "Search for Members By City:") %>
+    <%= text_field_tag :citysearch, params[:citysearch] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
