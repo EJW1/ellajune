@@ -1,6 +1,6 @@
 Ellajune::Application.routes.draw do
 
-  match 'community_guidelines' => 'static_pages#community_guidelines'
+  match 'community_guidelines' => 'static_pages#_community_guidelines'
 
   match 'welcome' => 'static_pages#welcome'
 
