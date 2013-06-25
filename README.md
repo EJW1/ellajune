@@ -1,11 +1,11 @@
 #EllaJune
 
-##A radically democratic online community for African Diasporic changemakers
+###A radically democratic online community for African Diasporic changemakers
 EllaJune works to create a democratic and empowering online space where African Diasporic changemakers can support each others work, share information and inspire each other. 
 
 Learn more at <http://ellajune.coop>
 
-##Contributing
+###Contributing
 We would love any contributions!
 
 ####How to contribute:
@@ -15,12 +15,11 @@ We would love any contributions!
 - Commit
 - Submit pull request
 
-##Setting Up EllaJune
-####Setup
+###Setting Up EllaJune
 1. make sure you have postgresql installed
 2. gem install bundle
 3. run 'bundle install'
 
-##Resources for Learning How to Code or Improving Your Skills:
+###Resources for Learning How to Code or Improving Your Skills:
 - <http://tryruby.org>
 - <http://ruby.railstutorial.org/>
