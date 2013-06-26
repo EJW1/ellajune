@@ -5,6 +5,7 @@ gem 'devise'
 gem 'friendly_id'
 gem 'geocoder'
 gem 'rails3-jquery-autocomplete'
+gem "paperclip", "~> 3.0"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
