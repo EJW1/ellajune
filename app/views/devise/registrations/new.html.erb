@@ -14,7 +14,7 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :username %><br />
+  <div><%= f.label :username, "Username: Avoid Using Punctuation and Spaces" %><br />
   <%= f.text_field :username %></div>
 
   <div><%= f.label :name %><br />
@@ -34,7 +34,7 @@
   <div><%= f.label :city %><br />
   <%= f.text_field :city %></div>
 
-  <div><%= f.label :state %><br />
+  <div><%= f.label :state, "State or Province" %><br />
   <%= f.text_field :state %></div>
 
   <div><%= f.label :country %><br />
