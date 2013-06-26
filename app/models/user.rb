@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username, :city, :state, :country, :website, :birthday, :address, :latitude, :longitude, :interest_tag_list
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :username, :city, :state, :country, :website, :birthday, :address, :latitude, :longitude, :avatar, :interest_tag_list
   validates_presence_of :name, :username
   validates_uniqueness_of :username, :case_sensitive => false
   has_many :posts
@@ -13,12 +13,11 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :interest_taggings
   has_many :interest_tags, through: :interest_taggings
-
   extend FriendlyId
   friendly_id :username, use: [:slugged, :history]
-
   geocoded_by :address
   after_validation :geocode
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 
   def address
     [city, state, country].compact.join(', ')
