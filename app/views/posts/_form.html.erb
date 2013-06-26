@@ -27,6 +27,18 @@
     <%= f.label :post_tag_list, "Tags (separated by commas)" %><br />
     <%= f.autocomplete_field :post_tag_list, autocomplete_post_tag_name_posts_path, :"data-delimiter" => ', ' %>
   </div>
+  <div class="field">
+    <%= f.label :city, "City (If your post is only directed to users in one location please include the city, state and/or country. Example: A post with a link to an article about politics in Brazil doesn't need a location. A post seeking collaborators for an activist campaign in Brazil should specify the location.)" %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state, "State or Province" %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
