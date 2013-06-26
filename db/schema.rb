@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130619201713) do
+ActiveRecord::Schema.define(:version => 20130626202701) do
 
   create_table "comments", :force => true do |t|
     t.text     "message"
@@ -73,6 +73,11 @@ ActiveRecord::Schema.define(:version => 20130619201713) do
     t.datetime "updated_at", :null => false
     t.string   "slug"
     t.integer  "user_id"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "posts", ["slug"], :name => "index_posts_on_slug"

@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :link, :points, :title, :user_id, :post_tag_list
+  attr_accessible :content, :link, :points, :title, :user_id, :post_tag_list, :address, :city, :state, :country, :latitude, :longitude
   belongs_to :user
   has_many :votes
   has_many :comments
@@ -10,9 +10,20 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 
+  geocoded_by :address
+  after_validation :geocode
+
   #Search
   def self.search(search)
       find(:all, :conditions => ['title LIKE ? OR link LIKE ?', "%#{search}%", "%#{search}%"])
+  end
+
+  def address
+    [city, state, country].compact.join(', ')
+  end
+
+  def self.citysearch(citysearch)
+    Post.near(citysearch, 25)
   end
 
   #Votes & Popularity

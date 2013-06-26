@@ -9,6 +9,8 @@ class PostsController < ApplicationController
       @posts = Post.search(params[:search])
     elsif params[:post_tag]
       @posts = Post.tagged_with(params[:post_tag]).order('points DESC')
+    elsif params[:citysearch]
+      @posts = Post.citysearch(params[:citysearch]) 
     else
       @posts = Post.order('points DESC')
     end
