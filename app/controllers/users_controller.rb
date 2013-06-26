@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def create
+    @user = User.create( params[:user] )
+  end
+
   def index
     if params[:search]
       @users = User.search(params[:search])
