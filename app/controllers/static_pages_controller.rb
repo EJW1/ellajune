@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
   def get_involved
   end
 
-  def staff
+  def contact
   end
 
   def vision

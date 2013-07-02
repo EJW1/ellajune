@@ -6,7 +6,7 @@ Ellajune::Application.routes.draw do
 
   match 'vision' => 'static_pages#vision'
 
-  match 'staff' => 'static_pages#staff'
+  match 'contact' => 'static_pages#contact'
 
   match 'get_involved' => 'static_pages#get_involved'
 
