@@ -54,12 +54,18 @@
 
     <ul class="left">
       <li class="divider"></li>
-      <li class="active"><a href="#">Posts</a></li>
+      <li><%= link_to "Members", users_path %></li>
       <li class="divider"></li>
-      <li><a href="#">Members</a></li>
+      <li class="has-dropdown"><%= link_to "Posts", posts_path %>
+        <ul class="dropdown">
+          <% @nav_tags = ["shares", "seeking collaborators", "skillshares", "travel stay", "volunteers", "community advice", "fundraising"] %>
+          <% @nav_tags.each do |tag|%>
+            <li><%= link_to tag, post_tag_path(tag) %></li>
+          <% end %>
+        </ul>
+
       <li class="divider"></li>
       <li class="has-dropdown"><%= link_to "About", mission_path %>
-
         <ul class="dropdown">
           <li><%= link_to "Mission", mission_path %></li>
           <li><%= link_to "Vision", vision_path %></li>
