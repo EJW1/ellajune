@@ -28,6 +28,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+<div class="contain-to-grid sticky">
   <nav class="top-bar" data-options="is_hover:false">
     <ul class="title-area">
       <!-- Title Area -->
@@ -38,8 +39,8 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
   <section class="top-bar-section">
-    <ul class="left">
-      <div id="user_nav">
+    <ul class="right">
+      <li class="user_nav">
         <% if user_signed_in? %>
           Signed in as <%= current_user.email %> 
           <%= link_to "Edit Your Profile", edit_user_registration_path %>
@@ -47,10 +48,32 @@
         <% else %>
           <%= link_to "Join!", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
         <% end %>
-      </div>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+    <ul class="left">
+      <li class="divider"></li>
+      <li class="active"><a href="#">Posts</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Members</a></li>
+      <li class="divider"></li>
+      <li class="has-dropdown"><%= link_to "About", mission_path %>
+
+        <ul class="dropdown">
+          <li><%= link_to "Mission", mission_path %></li>
+          <li><%= link_to "Vision", vision_path %></li>
+          <li><%= link_to "Community Guidelines", community_guidelines_path %></li>
+          <li><%= link_to "Get Involved", get_involved_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+        </ul>
+
+      </ul>
+
     </ul>
   </section>
   </nav>
+</div>
 
 <%= yield %>
 
