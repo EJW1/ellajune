@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   def community_guidelines
   end
 
-  def about
+  def mission
   end
 
   def get_involved

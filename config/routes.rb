@@ -2,7 +2,7 @@ Ellajune::Application.routes.draw do
 
   match 'community_guidelines' => 'static_pages#_community_guidelines'
 
-  match 'about' => 'static_pages#about'
+  match 'mission' => 'static_pages#mission'
 
   match 'vision' => 'static_pages#vision'
 
