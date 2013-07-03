@@ -53,6 +53,8 @@
       <li class="divider"></li>
       <li class="has-dropdown"><%= link_to "Posts", posts_path %>
         <ul class="dropdown">
+          <li><%= link_to "all posts", posts_path %></li>
+          <li><label>Popular Tags</label></li>
           <% @nav_tags = ["shares", "seeking collaborators", "skillshares", "travel stay", "volunteers", "community advice", "fundraising"] %>
           <% @nav_tags.each do |tag|%>
             <li><%= link_to tag, post_tag_path(tag) %></li>
