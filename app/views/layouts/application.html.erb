@@ -16,11 +16,7 @@
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "zepto.js" %>
-    <%= javascript_include_tag "foundation.js" %>
-    <%= javascript_include_tag "foundation.topbar.js" %>
     <%= csrf_meta_tags %>
   </head>
 
