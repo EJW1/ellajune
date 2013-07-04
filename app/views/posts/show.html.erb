@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>Title:</b></br>
   <%= @post.title %>
 </p>
 
 <p>
-  <b>Content:</b>
+  <b>Content:</b></br>
   <%= @post.content %>
 </p>
 
 <p>
-  <b>Link:</b>
+  <b>Link:</b></br>
   <%= link_to @post.link, @post.link %>
 </p>
 
 <p>
-  <b>Tags:</b>
+  <b>Tags:</b></br>
   <%= raw @post.post_tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(', ') %>
 </p>
 
 <p>
-  <b>Votes:</b>
+  <b>Votes:</b></br>
   <%= @post.votes.count %>
 </p>
 
