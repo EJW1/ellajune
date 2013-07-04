@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
-    if @post.user.id == current_user
+    if @post.user == current_user
       current_user = @post.user
     else
       redirect_to :back, alert: "You can only edit posts that you created."
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post}
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
