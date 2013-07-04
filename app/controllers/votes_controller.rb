@@ -9,7 +9,7 @@ class VotesController < ApplicationController
          format.html { redirect_to :back }
          format.json { render json: @vote, status: :created, location: @vote }
         else
-          format.html { render action: "new" }
+          format.html { redirect_to :back, alert: "You already upvoted this post" }
           format.json { render json: @link.errors, status: :unprocessable_entity }
         end
       end
