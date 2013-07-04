@@ -1,3 +1,9 @@
+div, p, table, body, h1, h2, h3, h4, h5, h6
+{
+margin-right:5px;
+margin-left:5px;
+}
+
 body
 {font-family: 'Sintony', sans-serif;}
 
