@@ -5,6 +5,8 @@
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Codystar' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
   	<meta charset="utf-8" />
 
   	<!-- Uncomment to make IE8 render like IE7 -->
@@ -16,6 +18,7 @@
   	<title><%= content_for?(:title) ? yield(:title) : "EllaJune" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "main" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "zepto.js" %>
     <%= javascript_include_tag "foundation.js" %>
