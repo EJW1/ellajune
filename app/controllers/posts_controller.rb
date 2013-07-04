@@ -85,7 +85,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
-    if @post.user.id == current_user
+    if @post.user == current_user
       @post.destroy
       redirect_to root_path
     else

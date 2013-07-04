@@ -39,8 +39,8 @@
     <td><%= post.votes.count %></td>
     <td><%= link_to '+1', votes_path(:vote => {:post_id => post.id}), :method => :post %></td>
     <td><%= link_to 'Read More & Comment', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) if post.user == current_user %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } if post.user == current_user %></td>
   </tr>
 <% end %>
 </table>
