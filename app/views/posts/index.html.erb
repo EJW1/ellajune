@@ -34,7 +34,7 @@
   <tr>
     <td><%= post.title %></td>
     <td><%= post.content %></td>
-    <td><%= post.link %></td>
+    <td><%= link_to post.link, post.link %></td>
     <td><%= raw post.post_tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(', ') %></td>
     <td><%= post.votes.count %></td>
     <td><%= link_to '+1', votes_path(:vote => {:post_id => post.id}), :method => :post %></td>
