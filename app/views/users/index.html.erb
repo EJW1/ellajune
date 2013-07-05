@@ -17,6 +17,13 @@
   </p>
 <% end %>
 
+<div id="interest_tag_cloud">
+  <h6>User By Interests:</h6>
+  <% interest_tag_cloud User.tag_counts, %w{s m l} do |interest_tag, css_class| %>
+    <%= link_to interest_tag.name, interest_tag_path(interest_tag.name), class: css_class %>
+  <% end %>
+</div>
+
 <table>
   <tr>
     <th>Name</th>
@@ -43,12 +50,5 @@
   </tr>
 <% end %>
 </table>
-
-<div id="interest_tag_cloud">
-  <h6>User Interests:</h6>
-  <% interest_tag_cloud User.tag_counts, %w{s m l} do |interest_tag, css_class| %>
-    <%= link_to interest_tag.name, interest_tag_path(interest_tag.name), class: css_class %>
-  <% end %>
-</div>
 
 <br />
