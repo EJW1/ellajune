@@ -6,41 +6,41 @@
 <%= image_tag @user.avatar.url(:thumb) %>
 
 <p>
-  <b>Name:</b></br>
+  <b>Name:</b><br />
   <%= @user.name %>
 </p>
 
 <p>
-  <b>Username:</b></br>
+  <b>Username:</b><br />
   <%= @user.username %>
 </p>
 
 <p>
-  <b>Email:</b></br>
+  <b>Email:</b><br />
   <%= @user.email %>
 </p>
 
 <p>
-  <b>Website:</b></br>
+  <b>Website:</b><br />
   <%= @user.website %>
 </p>
 
 <p>
-  <b>City:</b></br>
+  <b>City:</b><br />
   <%= @user.city %>
 </p>
 
 <p>
-  <b>State:</b></br>
+  <b>State:</b><br />
   <%= @user.state %>
 </p>
 
 <p>
-  <b>Country:</b></br>
+  <b>Country:</b><br />
   <%= @user.country %>
 </p>
 
 <p>
-  <b>Interests:</b></br>
+  <b>Interests:</b><br />
   <%= raw @user.interest_tags.map(&:name).map { |t| link_to t, interest_tag_path(t) }.join(', ') %>
 </p>
