@@ -13,6 +13,8 @@ class Post < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
+  require 'will_paginate/array'
+
   #Search
   def self.search(search)
       find(:all, :conditions => ['title LIKE ? OR link LIKE ?', "%#{search}%", "%#{search}%"], :order => 'points DESC')
