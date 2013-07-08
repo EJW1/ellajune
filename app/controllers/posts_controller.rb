@@ -6,13 +6,13 @@ class PostsController < ApplicationController
   def index
     Post.update_points
     if params[:search]
-      @posts = Post.search(params[:search])
+      @posts = Post.search(params[:search]).order('points DESC').paginate(:page => params[:page], :per_page => 5)
     elsif params[:post_tag]
-      @posts = Post.tagged_with(params[:post_tag]).order('points DESC')
+      @posts = Post.tagged_with(params[:post_tag]).order('points DESC').paginate(:page => params[:page], :per_page => 5)
     elsif params[:citysearch]
-      @posts = Post.citysearch(params[:citysearch]) 
+      @posts = Post.citysearch(params[:citysearch]).order('points DESC').paginate(:page => params[:page], :per_page => 5) 
     else
-      @posts = Post.order('points DESC')
+      @posts = Post.order('points DESC').paginate(:page => params[:page], :per_page => 5)
     end
   end
 
