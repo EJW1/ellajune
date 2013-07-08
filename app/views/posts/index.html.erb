@@ -26,7 +26,8 @@
 </div>
 
  <table> 
-<% if @posts == 0 %>
+  <br>
+<% if @posts.empty? %>
   <p>There doesn't seem to be any posts matching your search criteria</p>
 <% else %>
  <tr> 
