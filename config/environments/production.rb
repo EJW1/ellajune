@@ -20,6 +20,9 @@ Ellajune::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  #Uglifier compresses your code by removing white space. It also includes other optimizations such as changing your if and else statements to ternary operators where possible.
+  config.assets.js_compressor = :uglifier
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
