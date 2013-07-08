@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class Post < ActiveRecord::Base
   attr_accessible :content, :link, :points, :title, :user_id, :post_tag_list, :address, :city, :state, :country, :latitude, :longitude
   belongs_to :user
@@ -13,7 +15,6 @@ class Post < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
-  require 'will_paginate/array'
 
   #Search
   def self.search(search)

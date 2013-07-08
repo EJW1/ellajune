@@ -29,12 +29,12 @@
 
 <h6>Comments:</h6>
 <div>
-  <% @post.comments.order('created_at DESC').paginate(:page => params[:page], :per_page => 2).each do |comment| %>
+  <% @comments.each do |comment| %>
     <p><%= comment.message %></p>
     <% from_time = Time.now %>
     <p><i><%= comment.user.name %> -</i> <i><%= distance_of_time_in_words(from_time, comment.created_at) %> ago</i></p>
   <% end %>
-  <%= will_paginate @post.comments %>
+ <%= will_paginate @comments %>
 </div>
 
 <%= link_to 'Edit Your Post', edit_post_path(@post) %> |

@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     elsif params[:citysearch]
       @posts = Post.citysearch(params[:citysearch]).paginate(:page => params[:page], :per_page => 30) 
     else
-      @posts = Post.order('points DESC').paginate(:page => params[:page], :per_page => 30)
+      @posts = Post.order('points DESC').paginate(:page => params[:page], :per_page => 5)
     end
   end
 
@@ -20,6 +20,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.order('created_at DESC').paginate(:page => params[:page], :per_page => 2)
+
     @comment = Comment.new
 
     respond_to do |format|
