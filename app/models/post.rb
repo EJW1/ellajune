@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
 
   #Search
   def self.search(search)
-      find(:all, :conditions => ['title LIKE ? OR link LIKE ?', "%#{search}%", "%#{search}%"])
+      find(:all, :conditions => ['title LIKE ? OR link LIKE ?', "%#{search}%", "%#{search}%"], :order => 'points DESC')
   end
 
   def address
@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.citysearch(citysearch)
-    Post.near(citysearch, 25)
+    Post.near(citysearch, 25).order('points DESC')
   end
 
   #Votes & Popularity
