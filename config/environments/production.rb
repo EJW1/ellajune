@@ -49,7 +49,7 @@ Ellajune::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-   config.assets.precompile += ('zepto.js', 'foundation.js', 'autocomplete-rails.js', 'custom.modernizr.js', 'main.js', 'foundation_and_overrides.scss', 'main.css', 'posts.css.scss', 'user.css.scss')
+   config.assets.precompile += ['zepto.js', 'foundation.js', 'autocomplete-rails.js', 'custom.modernizr.js', 'main.js', 'foundation_and_overrides.scss', 'main.css', 'posts.css.scss', 'user.css.scss']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
