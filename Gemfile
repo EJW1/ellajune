@@ -1,3 +1,5 @@
+ruby '1.9.2'
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
@@ -12,7 +14,6 @@ gem 'will_paginate', '~> 3.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :production do
-    gem 'ruby', '1.9.2'
     gem 'pg'
     gem 'therubyracer'
 end
