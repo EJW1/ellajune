@@ -25,6 +25,10 @@
 </div>
 
 <table>
+<% if @users.empty? %>
+  <br>
+  <p>There doesn't seem to be any community members matching your search criteria</p>
+<% else %>
   <tr>
     <th>Name</th>
     <th>Interests</th>
@@ -32,6 +36,7 @@
     <th>State</th>
     <th>Country</th>
   </tr>
+<% end %>
 
 <% @users.each do |user| %>
   <tr>
@@ -44,5 +49,6 @@
   </tr>
 <% end %>
 </table>
+<%= will_paginate @posts %>
 
 <br />

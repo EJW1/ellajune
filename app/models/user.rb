@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   after_validation :geocode
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 
+  require 'will_paginate/array'
+
   def address
     [city, state, country].compact.join(', ')
   end
