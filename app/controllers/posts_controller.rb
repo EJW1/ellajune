@@ -11,6 +11,7 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with(params[:post_tag]).order('points DESC').paginate(:page => params[:page], :per_page => 30)
     elsif params[:citysearch]
       @posts = Post.citysearch(params[:citysearch]).paginate(:page => params[:page], :per_page => 30) 
+      binding.pry
     else
       @posts = Post.order('points DESC').paginate(:page => params[:page], :per_page => 30)
     end

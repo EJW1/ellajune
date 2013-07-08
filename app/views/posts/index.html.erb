@@ -25,8 +25,11 @@
   <% end %>
 </div>
 
-<table>
-  <tr>
+ <table> 
+<% if @posts == 0 %>
+  <p>There doesn't seem to be any posts matching your search criteria</p>
+<% else %>
+ <tr> 
     <th>Title</th>
     <th>Tags</th>
     <th>Upvotes</th>
@@ -34,6 +37,7 @@
     <th></th>
     <th></th>
   </tr>
+<% end %>
 
 <% @posts.each do |post| %>
   <tr>
