@@ -9,6 +9,7 @@ gem 'geocoder'
 gem 'rails3-jquery-autocomplete'
 gem "paperclip", "~> 3.0"
 gem 'will_paginate', '~> 3.0'
+gem 'newrelic_rpm'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
