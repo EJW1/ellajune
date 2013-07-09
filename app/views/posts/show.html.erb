@@ -20,6 +20,8 @@
   <%= raw @post.post_tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(', ') %>
 </p>
 
+<%= image_tag @post.avatar.url %>
+
 <p>
   <b>Votes:</b><br />
   <%= @post.votes.count %>
