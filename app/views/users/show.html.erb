@@ -3,7 +3,7 @@
 <!-- Only use one of the image_tags below. They display the profile picture from largest to smallest, top to bottom -->
 <%#= image_tag @user.avatar.url %>
 <%#= image_tag @user.avatar.url(:medium) %>
-<%= image_tag @user.avatar.url(:thumb) %>
+<%= image_tag @user.avatar.url(:thumb) if @user.avatar? %>
 
 <p>
   <b>Name:</b><br />

@@ -20,7 +20,7 @@
   <%= raw @post.post_tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(', ') %>
 </p>
 
-<%= image_tag @post.avatar.url %>
+<%= image_tag @post.avatar.url if @post.avatar? %>
 
 <p>
   <b>Votes:</b><br />
