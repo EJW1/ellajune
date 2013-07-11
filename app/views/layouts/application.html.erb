@@ -74,6 +74,18 @@
           <li><%= link_to "Contact", contact_path %></li>
         </ul>
 
+      <li class="divider"></li>
+      <li class="has-dropdown"><%= link_to "Community Dreams", post_path("introducing-the-ellajune-community-dreams-project") %>
+        <ul class="dropdown">
+          <li><%= link_to "Project Description", post_path("introducing-the-ellajune-community-dreams-project") %></li>
+          <li><%= link_to "All Community Dreams", post_tag_path("community dreams") %></li>
+          <li><label>Subcategories</label></li>
+          <% @nav_tags = ["visual dreams", "poetic dreams", "video dreams", "musical dreams"] %>
+          <% @nav_tags.each do |tag|%>
+            <li><%= link_to tag, post_tag_path(tag) %></li>
+          <% end %>
+        </ul>
+
       </ul>
     </ul>
   </section>
