@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709152228) do
+ActiveRecord::Schema.define(:version => 20130715221346) do
 
   create_table "comments", :force => true do |t|
     t.text     "message"
@@ -108,6 +108,11 @@ ActiveRecord::Schema.define(:version => 20130709152228) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
+    t.string   "video_link"
   end
 
   add_index "posts", ["slug"], :name => "index_posts_on_slug"

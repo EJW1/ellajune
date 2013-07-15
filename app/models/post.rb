@@ -1,13 +1,15 @@
 require 'will_paginate/array'
 
 class Post < ActiveRecord::Base
-  attr_accessible :content, :link, :points, :title, :user_id, :post_tag_list, :address, :city, :state, :country, :latitude, :longitude
+  attr_accessible :content, :link, :points, :title, :user_id, :post_tag_list, :address, :city, :state, :country, :latitude, :longitude, :video_link
   belongs_to :user
   has_many :votes
   has_many :comments
   has_many :post_taggings
   has_many :post_tags, through: :post_taggings
   validates_presence_of :title
+
+  before_create :embed_videos
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
@@ -66,5 +68,12 @@ class Post < ActiveRecord::Base
       PostTag.where(name: n.strip.downcase).first_or_create!
     end
   end
+
+  private
+
+    def embed_videos
+
+      self.content
+    end
 
 end
