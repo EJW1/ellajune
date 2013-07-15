@@ -1,4 +1,5 @@
 require 'will_paginate/array'
+include PostsHelper
 
 class Post < ActiveRecord::Base
   attr_accessible :content, :link, :points, :title, :user_id, :post_tag_list, :address, :city, :state, :country, :latitude, :longitude, :video_link
@@ -9,7 +10,7 @@ class Post < ActiveRecord::Base
   has_many :post_tags, through: :post_taggings
   validates_presence_of :title
 
-  before_create :embed_videos
+  before_create :embed_video
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
@@ -71,9 +72,10 @@ class Post < ActiveRecord::Base
 
   private
 
-    def embed_videos
-
-      self.content
+    def embed_video
+      if self.video_link
+        self.video_link = embedded_html(self.video_link)
+      end
     end
 
 end

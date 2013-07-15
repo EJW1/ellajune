@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <%= @post.video_link.html_safe %>
+</p>
+
+
+<p>
   <b>Tags:</b><br />
   <%= raw @post.post_tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(', ') %>
 </p>
