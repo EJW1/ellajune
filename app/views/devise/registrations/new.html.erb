@@ -4,20 +4,20 @@
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
+  <br />
+  <div><%= f.label :email, "Email (Required Field)" %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password, "Password (Required Field)" %><br />
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label :password_confirmation, "Password Confirmation (Required Field)" %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :username, "Username: Avoid Using Punctuation and Spaces" %><br />
+  <div><%= f.label :username, "Username (Required field - Avoid Using Punctuation and Spaces)" %><br />
   <%= f.text_field :username %></div>
 
-  <div><%= f.label :name %><br />
+  <div><%= f.label :name, "Name (Required Field)" %><br />
   <%= f.text_field :name %></div>
 
   <div class="field">
@@ -40,9 +40,11 @@
   <div><%= f.label :country %><br />
   <%= f.text_field :country %></div>
 
+  <div><%= f.label :avatar, "Profile Picture" %><br />
   <div><%= f.file_field :avatar %></div>
+
+  <br />
+  <br />
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
-
-<%= render "devise/shared/links" %>
