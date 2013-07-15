@@ -24,10 +24,11 @@
     <%= f.text_field :link %>
   </div>
   <div>
-    <%= f.label :avatar, "Upload a photo if you'd like" %><br />
+    <%= f.label :avatar, "Upload a photo if you'd like" %>
     <%= f.file_field :avatar %>
   </div>
   <div class="field">
+    <br />
     <%= f.label :post_tag_list, "Tags (separated by commas)" %><br />
     <%= f.autocomplete_field :post_tag_list, autocomplete_post_tag_name_posts_path, :"data-delimiter" => ', ' %>
   </div>
