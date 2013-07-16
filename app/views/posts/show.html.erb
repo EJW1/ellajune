@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <%= @post.video_link.html_safe %>
+  <%= @post.video_link.html_safe if @post.video_link? %>
 </p>
 
 
