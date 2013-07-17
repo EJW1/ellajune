@@ -73,7 +73,7 @@ class Post < ActiveRecord::Base
   private
 
     def embed_video
-      if self.video_link
+      if self.video_link?
         self.video_link = embedded_html(self.video_link)
       end
     end
