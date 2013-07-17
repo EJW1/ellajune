@@ -65,16 +65,6 @@
         </ul>
 
       <li class="divider"></li>
-      <li class="has-dropdown"><%= link_to "About", mission_path %>
-        <ul class="dropdown">
-          <li><%= link_to "Mission", mission_path %></li>
-          <li><%= link_to "Vision", vision_path %></li>
-          <li><%= link_to "Community Guidelines", community_guidelines_path %></li>
-          <li><%= link_to "Get Involved", get_involved_path %></li>
-          <li><%= link_to "Contact", contact_path %></li>
-        </ul>
-
-      <li class="divider"></li>
       <li class="has-dropdown"><%= link_to "Community Dreams", post_path("introducing-the-ellajune-community-dreams-project") %>
         <ul class="dropdown">
           <li><%= link_to "Project Description", post_path("introducing-the-ellajune-community-dreams-project") %></li>
@@ -84,6 +74,17 @@
           <% @nav_tags.each do |tag|%>
             <li><%= link_to tag, post_tag_path(tag) %></li>
           <% end %>
+        </ul>
+
+      <li class="divider"></li>
+      <li class="has-dropdown"><%= link_to "About", mission_path %>
+        <ul class="dropdown">
+          <li><%= link_to "Mission", mission_path %></li>
+          <li><%= link_to "Vision", vision_path %></li>
+          <li><%= link_to "Community Guidelines", community_guidelines_path %></li>
+          <li><%= link_to "Get Involved", get_involved_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+          <li><%= link_to "How to Use The Site", how_to_path %></li>
         </ul>
 
       </ul>

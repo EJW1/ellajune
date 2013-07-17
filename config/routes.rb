@@ -1,14 +1,11 @@
 Ellajune::Application.routes.draw do
 
   match 'community_guidelines' => 'static_pages#_community_guidelines'
-
   match 'mission' => 'static_pages#mission'
-
   match 'vision' => 'static_pages#vision'
-
   match 'contact' => 'static_pages#contact'
-
   match 'get_involved' => 'static_pages#get_involved'
+  match 'how_to' => 'static_pages#how_to'
 
   root :to => "posts#index"
 
@@ -19,11 +16,13 @@ Ellajune::Application.routes.draw do
       get :autocomplete_interest_tag_name
     end
   end
+
   resources :posts do
     collection do
       get :autocomplete_post_tag_name
     end
   end
+  
   resources :comments
 
   match 'votes/create' => 'votes#create', :as => :votes
