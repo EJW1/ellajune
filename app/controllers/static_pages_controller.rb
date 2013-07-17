@@ -14,4 +14,7 @@ class StaticPagesController < ApplicationController
 
   def vision
   end
+
+  def how_to
+  end
 end
