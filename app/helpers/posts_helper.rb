@@ -6,12 +6,12 @@ module PostsHelper
 	end
 
 	def video_id(input)
-		raise "Invalid input" unless embed_request?(input)
+		embed_request?(input)
 		input.match(YOUTUBE_REGEX)[5]
 	end
 
 	def embedded_html(input)
-		raise "Invalid input" unless embed_request?(input)
+		embed_request?(input)
 		id = video_id(input)
 		%Q{<iframe width="560" height="315" src="http://www.youtube.com/embed/#{id}"></iframe>}
 	end
