@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Posted By:</b><br />
+  <%= link_to @post.user.name, @post.user %>
+</p>
+
+<p>
   <b>Content:</b><br />
   <%= @post.content %>
 </p>
