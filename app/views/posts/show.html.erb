@@ -1,23 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b><br />
   <%= @post.title %>
 </p>
 
 <p>
-  <b>Posted By:</b><br />
-  <%= link_to @post.user.name, @post.user %>
+  <b>Posted By: </b><%= link_to @post.user.name, @post.user %>
 </p>
 
 <p>
-  <b>Content:</b><br />
   <%= @post.content %>
 </p>
 
 <p>
-  <b>Link:</b><br />
-  <%= link_to @post.link, @post.link %>
+  <b><%="Link:" if @post.link? %> </b><%= link_to @post.link, @post.link %>
 </p>
 
 <p>
@@ -26,15 +22,13 @@
 
 
 <p>
-  <b>Tags:</b><br />
-  <%= raw @post.post_tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(', ') %>
+  <b>Tags:</b><%= raw @post.post_tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(', ') %>
 </p>
 
 <%= image_tag @post.avatar.url if @post.avatar? %>
 
 <p>
-  <b>Votes:</b><br />
-  <%= @post.votes.count %>
+  <b>Votes:</b><%= @post.votes.count %>
 </p>
 
 <%= render 'comments/form' %>
