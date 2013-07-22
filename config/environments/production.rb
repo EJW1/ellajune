@@ -23,6 +23,9 @@ Ellajune::Application.configure do
   #Uglifier compresses your code by removing white space. It also includes other optimizations such as changing your if and else statements to ternary operators where possible.
   config.assets.js_compressor = :uglifier
 
+  #Devise/Heroku/Action Mailer
+  config.action_mailer.default_url_options = { :host => 'ellajune.coop' }
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
