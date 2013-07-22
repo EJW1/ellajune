@@ -24,7 +24,7 @@ Ellajune::Application.configure do
   config.assets.js_compressor = :uglifier
 
   #Devise/Heroku/Action Mailer
-  config.action_mailer.default_url_options = { :host => 'heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'ellajune.coop' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true

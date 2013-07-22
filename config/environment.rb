@@ -11,6 +11,6 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :user_name      => ENV['app16378421@heroku.com'],
   :password       => ENV['zdhfew4d'],
-  :domain         => 'heroku.com',
+  :domain         => 'ellajune.coop',
   :enable_starttls_auto => true
 }
