@@ -23,6 +23,7 @@ group :development, :test do
     gem 'better_errors'
     gem 'binding_of_caller'
     gem 'pry'
+    gem 'foreman'
 end
 
 # Gems used only for assets and not required
