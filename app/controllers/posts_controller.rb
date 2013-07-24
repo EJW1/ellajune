@@ -7,8 +7,13 @@ class PostsController < ApplicationController
     Post.update_points
     if params[:search]
       @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 30)
-    elsif params[:post_tag]
-      @posts = Post.tagged_with(params[:post_tag]).order('points DESC').paginate(:page => params[:page], :per_page => 30)
+    elsif params[:posttagsearch]
+      begin
+        @posts = Post.tagged_with(params[:posttagsearch]).order('points DESC').paginate(:page => params[:page], :per_page => 30)
+      rescue
+      # rescue ActiveRecord::RecordNotFound
+        @posts = []
+      end
     elsif params[:citysearch]
       @posts = Post.citysearch(params[:citysearch]).paginate(:page => params[:page], :per_page => 30) 
     else

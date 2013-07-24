@@ -51,8 +51,8 @@ class Post < ActiveRecord::Base
   end
 
   #Tagging Logic
-  def self.tagged_with(name)
-    PostTag.find_by_name!(name).posts
+  def self.tagged_with(posttagsearch)
+    PostTag.find_by_name!(posttagsearch).posts
   end
 
   def self.tag_counts

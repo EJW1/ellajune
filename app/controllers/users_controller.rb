@@ -14,7 +14,12 @@ class UsersController < ApplicationController
     if params[:search]
       @users = User.search(params[:search]).paginate(:page => params[:page], :per_page => 30)
     elsif params[:interest_tag]
+      begin
       @users = User.tagged_with(params[:interest_tag]).paginate(:page => params[:page], :per_page => 30)
+      rescue
+      # rescue ActiveRecord::RecordNotFound
+        @posts = []
+      end
     elsif params[:citysearch]
       @users = User.citysearch(params[:citysearch]).paginate(:page => params[:page], :per_page => 30)    
     else
