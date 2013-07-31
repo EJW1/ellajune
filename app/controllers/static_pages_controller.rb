@@ -12,9 +12,6 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def vision
-  end
-
   def how_to
   end
 end
