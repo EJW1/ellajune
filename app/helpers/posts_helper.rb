@@ -16,3 +16,4 @@ module PostsHelper
 		%Q{<iframe width="560" height="315" src="http://www.youtube.com/embed/#{id}"></iframe>}
 	end
 end
+
